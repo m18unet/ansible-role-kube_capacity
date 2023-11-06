@@ -1,0 +1,19 @@
+---
+- name: Verify
+  hosts: all
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - ../../defaults/main.yml
+
+  tasks:
+    - name: Check the kube-capacity version.
+      command: "{{ kube_capacity_bin_path }} version"
+      changed_when: false
+      register: kube_capacity_verify_version
+
+    - name: Verify kube-capacity's version is {{ kube_capacity_version }}
+      assert:
+        that:
+          - kube_capacity_version in kube_capacity_verify_version.stdout

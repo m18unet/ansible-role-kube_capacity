@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  author: m18unet
+  role_name: 'kube_capacity'
+  description: An Ansible Role that installs kube-capacity.
+
+  license: MIT
+
+  min_ansible_version: 2.10.0
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: Amazon
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - kube-capacity
+    - kube_capacity
+    - kubernetes
+    - k8s
+    - kubectl
+    - kubectl-plugins
+    - kubernetes-resource-management
+    - kubernetes-utilization

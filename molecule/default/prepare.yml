@@ -1,0 +1,13 @@
+---
+- name: Prepare
+  hosts: all
+  become: false
+  gather_facts: false
+
+  vars:
+    kube_capacity_version: '0.6.2'
+    kube_capacity_platform: 'Linux'
+    kube_capacity_archive_name: kube-capacity_{{ kube_capacity_version }}_{{ kube_capacity_platform }}_{{ kube_capacity_arch }}.tar.gz
+
+  roles:
+    - m18unet.kube_capacity

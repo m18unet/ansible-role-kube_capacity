@@ -1,0 +1,17 @@
+---
+- name: Check the presence of the kube-capacity binary.
+  stat:
+    path: "{{ kube_capacity_bin_path }}"
+  register: kube_capacity_check
+
+- name: Check the kube-capacity version.
+  shell: "{{ kube_capacity_bin_path }} version"
+  failed_when: false
+  changed_when: false
+  register: kube_capacity_current_version
+
+- name: Install kube-capacity v{{ kube_capacity_version }}
+  include_tasks: install.yml
+  when: >-
+    not kube_capacity_check.stat.exists
+    or kube_capacity_version not in kube_capacity_current_version.stdout

@@ -1,0 +1,10 @@
+---
+# See available releases: https://github.com/robscott/kube-capacity/releases
+kube_capacity_version: '0.7.4'
+kube_capacity_platform: linux
+kube_capacity_arch: x86_64
+kube_capacity_bin_path: /usr/local/bin/kube-capacity
+kube_capacity_release_url: https://github.com/robscott/kube-capacity/releases/download/v{{ kube_capacity_version }}
+kube_capacity_archive_name: kube-capacity_v{{ kube_capacity_version }}_{{ kube_capacity_platform }}_{{ kube_capacity_arch }}.tar.gz
+kube_capacity_download_url: "{{ kube_capacity_release_url }}/{{ kube_capacity_archive_name }}"
+kube_capacity_checksum_url: "{{ kube_capacity_release_url }}/checksums.txt"
