@@ -19,7 +19,7 @@ None.
 ```yaml
 - hosts: all
   roles:
-    - m18uet.kube_capacity
+    - m18unet.kube_capacity
 ```
 
 ## License
